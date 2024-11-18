@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/home_style.css">
+    <script src="/js/home_style.js"></script>
+</head>
+<body>
+<div class="home-wrapper">
+    <form method="post" action="/home" th:object="${submitRequest}">
+        <h2>Task</h2>
+        <textarea placeholder="Type here..." name="task" required></textarea>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

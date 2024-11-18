@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="box">
+    <h2>Signup</h2>
+    <form method="post" action="/register" th:object="${registerRequest}">
+
+        <!-- Page 1 of the form -->
+        <div class="form-page" id="page1">
+            <div class="user-box">
+                <input type="text" name="name" required="">
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="email" required="">
+                <label>Email</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="course" required="">
+                <label>Course</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="college" required="">
+                <label>College</label>
+            </div>
+            <div class="user-box">
+                <input type="tel" name="phoneNo" required="">
+                <label>Phone no</label>
+            </div>
+            <button type="button" class="next-btn" onclick="showPage(2)">Next</button>
+        </div>
+
+        <!-- Page 2 of the form -->
+        <div class="form-page" id="page2" style="display:none;">
+            <div class="user-box">
+                <input type="text" name="address" required="">
+                <label>Address</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="city" required="">
+                <label>City</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="district" required="">
+                <label>District</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="state" required="">
+                <label>State</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="pinCode" required="">
+                <label>Pin Code</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+            </div>
+            <button type="button" class="next-btn" onclick="showPage(1)">Back</button>
+            <input class="next-btn" type="submit" value="Signup">
+            <a class="next1-btn" href="/login">Already registered? Login now -></a>
+        </div>
+    </form>
+</div>
+
+<script>
+    function showPage(pageNumber) {
+        document.getElementById("page1").style.display = pageNumber === 1 ? "block" : "none";
+        document.getElementById("page2").style.display = pageNumber === 2 ? "block" : "none";
+    }
+</script>
+</body>
+</html>
